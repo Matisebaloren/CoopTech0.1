@@ -1,0 +1,15 @@
+.textColor{
+    color: red;
+}
+
+.btnShowPassword{
+    float: right;
+    margin-top: -48px;
+    position: relative;
+    z-index: 2;
+    height: 40px;
+    background-color: lightgray;
+    width: 48px;
+    padding-inline: 12px;
+    padding-top: 6px;
+}

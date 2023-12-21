@@ -1,0 +1,18 @@
+.hNavbar{
+    height: 4rem;
+}
+
+.section{
+    /* background-color: rgb(112, 112, 112); */
+    /* padding: 1rem; */
+}
+
+.expanded{
+    height: 18rem;
+}
+
+@media (min-width: 35rem) {
+    .expanded {
+      height: 100vh;
+    }
+  }
