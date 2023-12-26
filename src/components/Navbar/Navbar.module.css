@@ -1,18 +1,37 @@
+.navbar{
+    height: 4rem;
+    z-index: 1;
+    background: linear-gradient(-90deg ,#5abcaa, #1f76ba);
+}
+
 .hNavbar{
     height: 4rem;
 }
 
 .section{
-    /* background-color: rgb(112, 112, 112); */
-    /* padding: 1rem; */
+    background-color: rgba(0, 0, 0, 0.205);
+    /* background: linear-gradient(-90deg ,#5abcaa, #1f76ba); */
+    margin-inline: 1rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 7px black;
+   
 }
+
+.section a button{
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.582);
+}
+
+/* .section::backdrop{
+    
+} */
 
 .expanded{
     height: 18rem;
 }
 
-@media (min-width: 35rem) {
+@media (min-width: 768px) {
     .expanded {
       height: 100vh;
     }
   }
+

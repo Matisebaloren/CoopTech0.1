@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const Navbar = () => {
+const Navbar = ({ navbarReset }) => {
+  const resNav = () => {
+    navbarReset(true);
+  };
+
   const navbarRef = useRef(null);
 
   var expand = false;
@@ -27,11 +31,11 @@ const Navbar = () => {
     <div
       id="navbar"
       ref={navbarRef}
-      style={{ height: "4rem" }}
-      className="fixed w-full duration-300 transition-all h-16 bg-color1 overflow-hidden top-0"
+      className={styles.navbar + " fixed w-full duration-300 transition-all h-16 bg-color1 overflow-hidden top-0"}
     >
       <div className={"w-full flex " + styles.hNavbar}>
-        <div className="w-1/2 px-auto flex">
+        
+        <div className="w-3/4 px-auto flex">
           <IconButton
             size="large"
             edge="start"
@@ -42,37 +46,33 @@ const Navbar = () => {
           >
             <MenuIcon sx={{ fontSize: 30, color: "white" }} className="mx-5" />
           </IconButton>
-          <Link className="my-auto mr-auto" to="/Login">
+          <Link onClick={resNav} className="my-auto mr-auto md:block hidden" to="/Login">
             <button className=" text-white">INTRANET</button>
           </Link>
         </div>
-        <div className="w-1/2">
-          <Link to="/">
-            <img
-              src="src/assets/logoBlanco.png"
-              className="w-40 mx-auto"
-              alt=""
-            />
+        <div className="md:w-1/4">
+          <Link onClick={resNav} className="ml-auto" to="/">
+            <img src="src/assets/logoBlanco.png" className="h-full" alt="" />
           </Link>
         </div>
       </div>
 
-      <Contenido />
+      <Contenido resNav={resNav}/>
     </div>
   );
 };
 
-const Contenido = () => {
+const Contenido = ({resNav}) => {
   return (
-    <div className="flex flex-col gap-4 md:flex-row">
-      <div className={styles.section + " grid basis-1/4"}>
-        <Link className="mx-auto mb-2" to="/Servicios">
+    <div className="flex flex-col gap-4 md:flex-row pt-4">
+      <div className={styles.section + " grid basis-1/3"}>
+        <Link onClick={resNav} className="mx-auto mb-2" to="/Servicios">
           <button className="text-xl font-semibold text-color2">
             <KeyboardArrowRightIcon />
             SERVICIOS
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/oficina">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -80,7 +80,7 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/reconecta">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -88,14 +88,15 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/agua">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />+ AGUA
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/cloudServices">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -103,7 +104,7 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/provision">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -111,7 +112,7 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Servicios">
+        <Link onClick={resNav} className="mx-auto" to="/Servicios/desarrollos">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -120,14 +121,14 @@ const Contenido = () => {
           </button>
         </Link>
       </div>
-      <div className={styles.section + " grid gap-2 basis-1/3"}>
-        <Link className="mx-auto mb-2" to="/Servicio">
+      <div onClick={resNav} className={styles.section + " grid gap-2 basis-1/3"}>
+        <Link className="mx-auto mb-2" to="/">
           <button className="text-xl font-semibold text-color2">
             <KeyboardArrowRightIcon />
             ADN COOPTECH
           </button>
         </Link>
-        <Link className="mx-auto" to="/Adn">
+        <Link onClick={resNav} className="mx-auto" to="/Adn">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -135,7 +136,7 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Adn">
+        <Link onClick={resNav} className="mx-auto" to="/Adn">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -143,7 +144,7 @@ const Contenido = () => {
             </h1>
           </button>
         </Link>
-        <Link className="mx-auto" to="/Adn">
+        <Link onClick={resNav} className="mx-auto" to="/Adn">
           <button className="text-white">
             <h1>
               <KeyboardArrowRightIcon />
@@ -152,17 +153,23 @@ const Contenido = () => {
           </button>
         </Link>
       </div>
-      <div className={styles.section + " grid gap-2 basis-1/3 "}>
-        <Link className="mx-auto mb-2" to="/Servicio">
+      <div className={styles.section + " grid py-auto basis-1/3 "}>
+        <Link onClick={resNav} className="mx-auto h-min my-auto" to="/Servicio">
           <button className="text-xl font-semibold text-color2">
             <KeyboardArrowRightIcon />
             CASOS DE EXITO
           </button>
         </Link>
-        <Link className="mx-auto mb-2" to="/Servicio">
+        <Link onClick={resNav} className="mx-auto h-min my-auto" to="/Servicio">
           <button className="text-xl font-semibold text-color2">
             <KeyboardArrowRightIcon />
             CARRERA
+          </button>
+        </Link>
+        <Link onClick={resNav} className="mx-auto md:hidden block h-min my-auto" to="/LOGIN">
+          <button className="text-xl font-semibold text-color2">
+            <KeyboardArrowRightIcon />
+            INTRANET
           </button>
         </Link>
       </div>
