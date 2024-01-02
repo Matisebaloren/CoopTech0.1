@@ -23,8 +23,8 @@ const Servicios = () => {
   return (
     <>
       <Header title="Servicios" />
-      <div className="grid grid-rows-3 grid-flow-col gap-5 mb-15">
-        <Card />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-20 mx-10 md:mx-20 mb-20">
+        <Card title="titulo" desc="sadasd ad as dsa " img="" seccion="provision" />
         <Card />
         <Card />
       </div>
