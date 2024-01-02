@@ -2,11 +2,6 @@ import React from "react";
 import styles from "./Home.module.css";
 
 const Home = ({ navbarReset }) => {
-
-  // const handleClick = () => {
-  //   navbarReset(true);
-  // };
-
   return (
     <>
       <div className={styles.divVideo}>
@@ -17,16 +12,17 @@ const Home = ({ navbarReset }) => {
           muted="true"
           loop="true"
         ></video>
+        
         <div className="my-auto">
           <img
             src="src/assets/LogoSinFondoSombra2.png"
-            className={styles.imgLogo + " m-16 mt"}
+            className={" w-full lg:w-2/5 md:w-3/5 p-16 mt"}
             alt=""
           />
-          <h1 className="text-white text-5xl m-16">
-            Forjando el futuro de manera inteligente y eficiente.
+          <h1 className="text-white text-4xl lg:text-6xl w-full lg:w-2/3 font-extralight px-10 lg:px-16">
+            Para evolucionar los servicios esenciales, con adaptabilidad y
+            escalabilidad. 
           </h1>
-       
         </div>
       </div>
     </>

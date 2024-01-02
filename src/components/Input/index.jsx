@@ -1,5 +1,5 @@
 import React, { Children, useState } from "react";
-import styles from "./input.module.css";
+import styles from "./Input.module.css";
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { Margin } from "@mui/icons-material";

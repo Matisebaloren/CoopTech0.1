@@ -9,13 +9,11 @@
 }
 
 .img{
-height: 50%;
-
+height: 100%;
+max-height: 100%;
+max-width: 100%;
 }
 
 .boton{
-    /* z-index: 1; */
     background: yellow;
-    /* width: min-content; */
-    /* padding: ; */
 }
