@@ -11,6 +11,7 @@ export default {
         'color2': '#f88d29;',
         'color3': '#bbbdc0;',
       },
+      
     },
   },
   plugins: [],

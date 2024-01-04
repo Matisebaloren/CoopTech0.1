@@ -3,6 +3,7 @@ import styles from "./Carrera.module.css"
 import Header from '../../components/Header'
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
+// media
 
 const Carrera = () => {
   return (
@@ -20,9 +21,6 @@ const Carrera = () => {
       <div className='flex'>
         <button className='mx-auto w-fit bg-blue-400 p-3 text-xl shadow-xl rounded-full'>Ofertas de empleo </button>
       </div>
-      
-      
-     
 
      
       <div className="flex flex-col m-6 divide-y divide-dashed divide-slate-600">

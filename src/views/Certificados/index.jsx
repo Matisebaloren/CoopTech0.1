@@ -2,6 +2,9 @@ import React from 'react'
 import styles from "./Certificados.module.css"
 import Header from '../../components/Header'
 
+// media
+import Medalla from "/src/assets/medalla.png";
+import Diploma from "/src/assets/diploma.png";
 
 const Certificados = () => {
   return (
@@ -15,7 +18,7 @@ const Certificados = () => {
           @br•Promoción de la participación activa de los miembros.
           @br•Implementación de prácticas sostenibles y éticas.
           @br•Contribución significativa al desarrollo comunitario."
-          img="/src/assets/medalla.png"
+          img={Medalla}
         />
         <Caso
           name="Certificado de Innovación Cooperativa"
@@ -24,7 +27,7 @@ const Certificados = () => {
           @br•Desarrollo e implementación de soluciones innovadoras para abordar desafíos cooperativos.
           @br•Adopción de tecnologías avanzadas para mejorar la eficiencia y la participación de los miembros.
           @br•Colaboración activa en iniciativas de investigación y desarrollo dentro del ámbito cooperativo."
-          img="/src/assets/diploma.png"
+          img={Diploma}
         />
       </div>
     </div>

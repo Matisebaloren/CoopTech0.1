@@ -20,6 +20,11 @@ function App() {
 
   function navbarReset() {
     setUpdateNavbar(updateNavbar + 1);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    // screen.x
   }
   
 

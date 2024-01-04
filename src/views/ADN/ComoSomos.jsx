@@ -7,16 +7,18 @@ import SwitchAccessShortcutAddIcon from "@mui/icons-material/SwitchAccessShortcu
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 
+// media
+
 const ComoSomos = () => {
   return (
     <div>
-      <Header title="Nuestro ADN" />
-      
+      <Header title="Nuestro ADN" subtitle="Como Somos" />
+
       <div className="flex flex-wrap my-8">
-        <h1 className="text-slate-600 text-4xl w-full mb-3 md:w-1/3 self-center text-center">
+        {/* <h1 className="text-slate-600 text-4xl w-full mb-3 md:w-1/3 self-center text-center">
           Como Somos:
-        </h1>
-        <p className="md:w-1/2 w-full text-slate-800 text-xl text-left px-5">
+        </h1> */}
+        <p className=" w-full text-slate-800 text-xl text-left px-5">
           Nuestro compromiso va más allá de la tecnología: buscamos generar
           bienestar en las personas, mediante servicios de calidad y accesibles,
           a través de la tecnología y la innovación.
@@ -49,7 +51,12 @@ const ComoSomos = () => {
         />
       </div>
 
-      <h1 className="text-slate-800 md:text-4xl text-lg font-extralight m-10">Impulsamos la transformación digital en el ámbito de los servicios esenciales, y ofrecemos soluciones adaptadas y escalables en constante evolución, con el propósito de llevar nuestro impacto positivo y duradero a personas de otras localidades. </h1>
+      <h1 className="text-slate-800 md:text-4xl text-lg font-extralight m-10">
+        Impulsamos la transformación digital en el ámbito de los servicios
+        esenciales, y ofrecemos soluciones adaptadas y escalables en constante
+        evolución, con el propósito de llevar nuestro impacto positivo y
+        duradero a personas de otras localidades. 
+      </h1>
     </div>
   );
 };

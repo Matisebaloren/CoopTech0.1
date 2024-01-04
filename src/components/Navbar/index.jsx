@@ -5,25 +5,35 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
+// imagenes
+import LogoBlanco from "/src/assets/logoBlanco.png";
+import OficinaVirtual from "/src/assets/servicios/oficinaVirtual.png";
+import OficinaVirtual2 from "/src/assets/servicios/oficinaVirtual2.png";
+import LogoSolo from "/src/assets/LogoSolo.png";
+
 const Navbar = ({ navbarReset }) => {
   const resNav = () => {
     navbarReset(true);
   };
 
   const navbarRef = useRef(null);
-  const navbarColor = useRef(null);
+  var navbarColor = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
-      if (window.scrollY == 0 && expand == false && navbarColor) {
-        
+      if (
+        window.scrollY == 0 &&
+        expand == false &&
+        navbarColor.current != null
+      ) {
+        navbarRef.current.classList.remove("shadow-2xl");
         navbarColor.current.style.opacity = 0;
       } else {
-        if(navbarColor){
+        if (navbarColor.current) {
+          navbarRef.current.classList.add("shadow-2xl");
+
           navbarColor.current.style.opacity = 1;
         }
-       
       }
     };
 
@@ -34,12 +44,14 @@ const Navbar = ({ navbarReset }) => {
   const expandir = () => {
     expand = !expand;
     if (expand) {
-      console.log(screen.width);
-      navbarColor.current.style.opacity = 1;
+      if (navbarColor.current != null) {
+        navbarColor.current.style.opacity = 1;
+      }
       navbarRef.current.style.height = "100%";
     } else {
       navbarRef.current.style.height = "4rem";
       if (window.scrollY == 0) {
+        navbarRef.current.classList.remove("shadow-2xl");
         navbarColor.current.style.opacity = 0;
       } else {
         navbarColor.current.style.opacity = 1;
@@ -53,7 +65,7 @@ const Navbar = ({ navbarReset }) => {
       ref={navbarRef}
       className={
         styles.navbar +
-        " fixed w-full duration-1000 transition-all h-16 overflow-hidden top-0 shadow-2xl"
+        " fixed w-full duration-1000 transition-all h-16 overflow-hidden top-0"
       }
     >
       <div className="w-full flex h-16">
@@ -86,7 +98,7 @@ const Navbar = ({ navbarReset }) => {
         </div>
         <div className="md:w-1/4">
           <Link onClick={resNav} className="ml-auto" to="/">
-            <img src="/src/assets/logoBlanco.png" className="h-full " alt="" />
+            <img src={LogoBlanco} className="h-full " alt="" />
           </Link>
         </div>
       </div>
@@ -100,7 +112,7 @@ const Contenido = ({ resNav }) => {
     <div
       className={
         styles.navbarContent +
-        " flex flex-col overflow-scroll gap-4 md:flex-row pt-4"
+        " flex flex-col overflow-scroll gap-4 md:flex-row"
       }
     >
       <div
@@ -148,9 +160,9 @@ const Contenido = ({ resNav }) => {
         <Link onClick={resNav} className="mx-auto" to="/QuienesSomos">
           <Item text="QUIENES SOMOS" />
         </Link>
-        {/* <Link onClick={resNav} className="mx-auto" to="/Sostenibilidad">
+        <Link onClick={resNav} className="mx-auto" to="/Sostenibilidad">
           <Item text=" SOSTENIBILIDAD" />
-        </Link> */}
+        </Link>
       </div>
       <div
         className={styles.section + " flex flex-col h-1/2 my-auto basis-1/4 "}
@@ -178,7 +190,7 @@ const Contenido = ({ resNav }) => {
       <div
         className={
           styles.sombra1 +
-          " max-w-[60vw] mx-auto md:mx-unset h-72 pr-5 flex flex-col my-auto basis-1/4 drop-shadow-sm "
+          " px-5 flex flex-col basis-1/4 drop-shadow-sm "
         }
       >
         <Imagenes />
@@ -209,14 +221,8 @@ const Item = ({ text = "", title = false }) => {
 const Imagenes = () => {
   const [imageId, setImageId] = useState(0);
   const img = useRef();
-  var imagenesArray = [
-    "/src/assets/servicios/oficinaVirtual.png",
-    "/src/assets/servicios/oficinaVirtual2.png",
-    "/src/assets/LogoSolo.png",
-  ];
-
+  var imagenesArray = [OficinaVirtual, OficinaVirtual2, LogoSolo];
   useEffect(() => {
-    // img => agregarle la clase styles.flipInX
     const interval = setInterval(() => {
       console.log(imageId + " " + imagenesArray.length);
       if (imagenesArray.length <= imageId + 1) {
@@ -226,8 +232,7 @@ const Imagenes = () => {
       }
       img.current.classList.add(styles.flipInX);
       setTimeout(() => img.current.classList.remove(styles.flipInX), 1000);
-      // // setImageId(imageId + 1);
-    }, 3000); // Actualiza cada segundo
+    }, 3000);
     return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
   }, [imageId]);
 
@@ -235,7 +240,7 @@ const Imagenes = () => {
     <>
       <img
         ref={img}
-        className={styles.imagenes + " " + styles.flipInX + " my-auto"}
+        className={styles.imagenes + " " + styles.flipInX + " "}
         src={imagenesArray[imageId]}
         alt=""
       />
