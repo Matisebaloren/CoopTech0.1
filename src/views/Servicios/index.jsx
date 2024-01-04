@@ -24,9 +24,12 @@ const Servicios = () => {
     <>
       <Header title="Servicios" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-20 mx-10 md:mx-20 mb-20">
-        <Card title="titulo" desc="sadasd ad as dsa " img="" seccion="provision" />
-        <Card />
-        <Card />
+        <Card title="OFICINA VIRTUAL" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="oficina" />
+        <Card title="RECONECTA" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="reconecta" />
+        <Card title="+ AGUA" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="agua" />
+        <Card title="CLOUD SERVICES" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="cloudServices" />
+        <Card title="PROVISIÓN" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="provision" />
+        <Card title="DESARROLLOS ESPECIALES" desc="Descripción del Servicio..." img="/src/assets/servicios/oficinaVirtual.png" seccion="desarrollos" />
       </div>
       <Seccion
         id="oficina"

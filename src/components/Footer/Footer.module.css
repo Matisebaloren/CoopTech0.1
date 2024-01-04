@@ -15,8 +15,10 @@
 
 .footer p{
     margin: auto;
+    padding-inline: 2px;
 }
 
 .footer a{
     margin: auto;
+    padding-inline: 2px;
 }

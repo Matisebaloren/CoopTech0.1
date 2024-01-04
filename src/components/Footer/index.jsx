@@ -7,8 +7,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer + " pt-10 md:px-20 px-4  flex flex-wrap"}>
-      <div className="2xl:w-2/3 w-full flex flex-wrap flex-col md:flex-row text-white text-2xl">
+    <footer className={styles.footer + " pt-10 md:px-10 px-4  flex flex-wrap"}>
+      <div className="xl:w-2/3 w-full flex flex-wrap gap-2 flex-row text-white text-2xl">
         {/* <div className="flex m-auto text-center">
           
         </div> */}
@@ -20,14 +20,14 @@ const Footer = () => {
           />
         </div>
         <Pleca />
-        <a href="">Qué hacemos</a>
+        <a href="/Servicios">Qué hacemos</a>
         <Pleca />
         <a href="">ADN CoopTech</a>
         <Pleca />
         <a href="">Casos de exito</a>
       </div>
 
-      <div className="2xl:w-1/3 w-full">
+      <div className="xl:w-1/3 w-full">
         <img className="mx-auto w-2/3" src="/src/assets/LogoCoop.png" alt="" />
       </div>
     </footer>

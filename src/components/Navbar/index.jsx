@@ -16,10 +16,14 @@ const Navbar = ({ navbarReset }) => {
   useEffect(() => {
     const handleScroll = () => {
       console.log(window.scrollY);
-      if (window.scrollY == 0 && expand == false) {
+      if (window.scrollY == 0 && expand == false && navbarColor) {
+        
         navbarColor.current.style.opacity = 0;
       } else {
-        navbarColor.current.style.opacity = 1;
+        if(navbarColor){
+          navbarColor.current.style.opacity = 1;
+        }
+       
       }
     };
 
@@ -32,7 +36,7 @@ const Navbar = ({ navbarReset }) => {
     if (expand) {
       console.log(screen.width);
       navbarColor.current.style.opacity = 1;
-      navbarRef.current.style.height = screen.height + "px";
+      navbarRef.current.style.height = "100%";
     } else {
       navbarRef.current.style.height = "4rem";
       if (window.scrollY == 0) {
@@ -144,20 +148,23 @@ const Contenido = ({ resNav }) => {
         <Link onClick={resNav} className="mx-auto" to="/QuienesSomos">
           <Item text="QUIENES SOMOS" />
         </Link>
-        <Link onClick={resNav} className="mx-auto" to="/Sostenibilidad">
+        {/* <Link onClick={resNav} className="mx-auto" to="/Sostenibilidad">
           <Item text=" SOSTENIBILIDAD" />
-        </Link>
+        </Link> */}
       </div>
       <div
         className={styles.section + " flex flex-col h-1/2 my-auto basis-1/4 "}
       >
         <Link onClick={resNav} className="mx-auto h-min" to="/Exitos">
-          <Item text="CASOS DE EXITO" title={true} />
+          <Item text="CASOS DE ÉXITO" title={true} />
         </Link>
         <Link onClick={resNav} className="mx-auto h-min" to="/Certificados">
           <Item text="CERTIFICACIONES Y PREMIOS" title={true} />
         </Link>
-        <Link onClick={resNav} className="mx-auto h-min" to="/Servicio">
+        <Link onClick={resNav} className="mx-auto h-min" to="/Noticias">
+          <Item text="COMUNIDAD / NOTICIAS" title={true} />
+        </Link>
+        <Link onClick={resNav} className="mx-auto h-min" to="/Carrera">
           <Item text="CARRERA" title={true} />
         </Link>
         <Link
@@ -171,7 +178,7 @@ const Contenido = ({ resNav }) => {
       <div
         className={
           styles.sombra1 +
-          " max-w-[60vw] mx-auto md:mx-unset pr-5 flex flex-col my-auto basis-1/4 drop-shadow-sm "
+          " max-w-[60vw] mx-auto md:mx-unset h-72 pr-5 flex flex-col my-auto basis-1/4 drop-shadow-sm "
         }
       >
         <Imagenes />
@@ -182,16 +189,11 @@ const Contenido = ({ resNav }) => {
 
 const Item = ({ text = "", title = false }) => {
   var clases = "";
-  // if (title) {
-  //   clases += "text-3xl text-color2 underline mb-4";
-  // } else {
-  //   clases += "text-2xl text-black";
-  // }
 
   if (title) {
-    clases += "text-3xl text-black underline mb-4";
+    clases += "text-2xl text-black font-bold underline mt-5";
   } else {
-    clases += "text-2xl text-color1";
+    clases += "text-xl font-bold text-color1";
   }
 
   return (

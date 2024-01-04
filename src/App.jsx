@@ -11,6 +11,8 @@ import QuienesSomos from "./views/ADN/QuienesSomos"
 import Sostenibilidad from "./views/ADN/Sostenibilidad";
 import CasosExito from "./views/CasosExito";
 import Certificados from "./views/Certificados";
+import Noticias from "./views/Noticias";
+import Carrera from "./views/Carrera";
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
           <Route path="/Sostenibilidad" element={<Sostenibilidad/>} />
           <Route path="/Exitos" element={<CasosExito/>} />
           <Route path="/Certificados" element={<Certificados/>} />
+          <Route path="/Noticias" element={<Noticias/>} />
+          <Route path="/Carrera" element={<Carrera/>} />
         </Routes>
       </section>
       <Footer />
