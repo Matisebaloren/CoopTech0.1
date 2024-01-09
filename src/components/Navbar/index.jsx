@@ -88,17 +88,21 @@ const Navbar = ({ navbarReset }) => {
           >
             <MenuIcon sx={{ fontSize: 30, color: "white" }} className="mx-5" />
           </IconButton>
-          <Link
+          
+        </div>
+        <div className="md:w-1/4">
+          <Link onClick={resNav} className="ml-auto" to="/">
+            <img src={LogoBlanco} className="h-full " alt="" />
+          </Link>
+         
+        </div>
+        <div>
+        <Link
             onClick={resNav}
             className="my-auto mr-auto md:block hidden"
             to="/Login"
           >
             <button className=" text-white">INTRANET</button>
-          </Link>
-        </div>
-        <div className="md:w-1/4">
-          <Link onClick={resNav} className="ml-auto" to="/">
-            <img src={LogoBlanco} className="h-full " alt="" />
           </Link>
         </div>
       </div>

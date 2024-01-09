@@ -18,7 +18,12 @@ const ComoSomos = () => {
         {/* <h1 className="text-slate-600 text-4xl w-full mb-3 md:w-1/3 self-center text-center">
           Como Somos:
         </h1> */}
-        <p className=" w-full text-slate-800 text-xl text-left px-5">
+        {/* <p className=" w-full text-slate-800 text-xl text-left px-5">
+          Nuestro compromiso va más allá de la tecnología: buscamos generar
+          bienestar en las personas, mediante servicios de calidad y accesibles,
+          a través de la tecnología y la innovación.
+        </p> */}
+        <p className=" w-full text-slate-800 text-3xl font-light text-center px-8">
           Nuestro compromiso va más allá de la tecnología: buscamos generar
           bienestar en las personas, mediante servicios de calidad y accesibles,
           a través de la tecnología y la innovación.
